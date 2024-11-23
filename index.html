@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Календарь спортивных мероприятий</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Календарь спортивных мероприятий</h1>
+    </header>
+    <main>
+        <div class="filters-container">
+            <!-- Фильтры -->
+            <section id="filters">
+                <h2>Фильтрация по параметрам</h2>
+                <form id="filterForm">
+                    <div class="filter-group">
+                        <label>Вид спорта:</label>
+                        <select id="sportFilter">
+                            <option value="">Все</option>
+                            <option value="Баскетбол">Баскетбол</option>
+                            <option value="Плавание">Плавание</option>
+                            <option value="Футбол">Футбол</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Дисциплина:</label>
+                        <input type="text" id="disciplineFilter" placeholder="Введите дисциплину">
+                    </div>
+                    <div class="filter-group">
+                        <label>Программа:</label>
+                        <input type="text" id="programFilter" placeholder="Введите программу">
+                    </div>
+                    <div class="filter-group">
+                        <label>Место проведения:</label>
+                        <input type="text" id="locationFilter" placeholder="Введите место">
+                    </div>
+                    <div class="filter-group">
+                        <label>Количество участников:</label>
+                        <input type="number" id="participantsFilter" placeholder="Введите количество">
+                    </div>
+                    <div class="filter-group">
+                        <label>Пол:</label>
+                        <select id="genderFilter">
+                            <option value="">Все</option>
+                            <option value="Мужчины">Мужчины</option>
+                            <option value="Женщины">Женщины</option>
+                            <option value="Универсально">Универсально</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Возрастная группа:</label>
+                        <input type="text" id="ageGroupFilter" placeholder="Например, 18-30">
+                    </div>
+                    <div class="filter-group">
+                        <label>Тип соревнования:</label>
+                        <select id="competitionTypeFilter">
+                            <option value="">Все</option>
+                            <option value="Чемпионат">Чемпионат</option>
+                            <option value="Кубок">Кубок</option>
+                            <option value="Межрегиональные">Межрегиональные</option>
+                            <option value="Окружные">Окружные</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="filter-btn">Применить фильтры</button>
+                </form>
+            </section>
+
+            <!-- Форматы отображения -->
+            <section id="dateFormats">
+                <h2>Формат отображения</h2>
+                <form id="dateForm">
+                    <div class="filter-group">
+                        <label>Сроки проведения:</label>
+                        <select id="dateRangeFilter">
+                            <option value="all">Все</option>
+                            <option value="week">Текущая неделя</option>
+                            <option value="month">Следующий месяц</option>
+                            <option value="quarter">Квартал</option>
+                            <option value="halfyear">Полгода</option>
+                            <option value="custom">Свободный выбор</option>
+                        </select>
+                    </div>
+                    <div id="customDateFields">
+                        <div class="filter-group">
+                            <label>Дата начала:</label>
+                            <input type="date" id="startDateFilter">
+                        </div>
+                        <div class="filter-group">
+                            <label>Дата окончания:</label>
+                            <input type="date" id="endDateFilter">
+                        </div>
+                    </div>
+                    <button type="button" class="filter-btn" id="applyDateFormat">Применить формат</button>
+                </form>
+            </section>
+        </div>
+
+        <!-- Таблица мероприятий -->
+        <section id="events">
+            <h2>Мероприятия</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Вид спорта</th>
+                            <th>Дисциплина</th>
+                            <th>Программа</th>
+                            <th>Место проведения</th>
+                            <th>Участники</th>
+                            <th>Пол</th>
+                            <th>Возрастная группа</th>
+                            <th>Сроки</th>
+                            <th>Тип</th>
+                            <th>Напоминание</th>
+                        </tr>
+                    </thead>
+                    <tbody id="eventsList">
+                        <!-- Динамически заполняемые данные -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 Календарь спортивных мероприятий</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
